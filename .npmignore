@@ -1,0 +1,7 @@
+node_modules
+pnpm-debug.log
+.DS_Store
+.gitignore
+.prettierignore
+.prettierrc
+pnpm-lock.yaml
