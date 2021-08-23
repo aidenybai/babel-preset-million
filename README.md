@@ -8,7 +8,13 @@
 npm install --save-dev babel-preset-million
 ```
 
-## Usage
+`.babelrc`
+
+```json
+{
+  "presets": ["babel-preset-million"]
+}
+```
 
 ## License
 
