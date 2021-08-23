@@ -2,18 +2,22 @@
   "name": "babel-plugin-million",
   "version": "0.0.0",
   "description": "Transforms JSX to Million virtual nodes",
-  "main": "dist/million.umd.js",
-  "module": "dist/million.esm.js",
-  "types": "dist/million.esm.d.ts",
-  "scripts": {},
+  "main": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && rollup -c && cp dist/types/index.esm.d.ts dist/index.d.ts",
+    "lint": "eslint src/**",
+    "cleanup": "prettier --write src --parser typescript"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aidenybai/babel-plugin-million.git"
   },
   "exports": {
     ".": {
-      "import": "./dist/million.esm.js",
-      "require": "./dist/million.cjs.js"
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js"
     }
   },
   "sideEffects": false,
@@ -34,5 +38,22 @@
   "homepage": "https://github.com/aidenybai/babel-plugin-million",
   "engines": {
     "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.3.2",
+    "rollup": "^2.56.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-ts": "^1.4.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@babel/plugin-syntax-jsx": "^7.14.5",
+    "@babel/types": "^7.15.0",
+    "million": "^0.4.1"
   }
 }
