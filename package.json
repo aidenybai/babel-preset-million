@@ -2,23 +2,18 @@
   "name": "babel-plugin-million",
   "version": "0.0.0",
   "description": "Transforms JSX to Million virtual nodes",
-  "main": "dist/index.umd.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "main": "./lib/index.js",
   "scripts": {
-    "build": "rm -rf dist && rollup -c && cp dist/types/index.esm.d.ts dist/index.d.ts",
+    "build": "rm -rf dist && rollup -c",
     "lint": "eslint src/**",
     "cleanup": "prettier --write src --parser typescript"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aidenybai/babel-plugin-million.git"
-  },
-  "exports": {
-    ".": {
-      "import": "./dist/index.esm.js",
-      "require": "./dist/index.cjs.js"
-    }
   },
   "sideEffects": false,
   "keywords": [
@@ -51,9 +46,13 @@
     "tslib": "^2.3.1",
     "typescript": "^4.3.5"
   },
+  "peerDependencies": {
+    "@babel/core": "^7.15.0"
+  },
   "dependencies": {
-    "@babel/plugin-syntax-jsx": "^7.14.5",
-    "@babel/types": "^7.15.0",
-    "million": "^0.4.1"
+    "@babel/helper-annotate-as-pure": "^7.14.5",
+    "@babel/helper-module-imports": "^7.14.5",
+    "@babel/helper-plugin-utils": "^7.14.5",
+    "@babel/plugin-syntax-jsx": "^7.14.5"
   }
 }

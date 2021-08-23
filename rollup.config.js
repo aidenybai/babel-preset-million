@@ -2,11 +2,8 @@ import { terser } from 'rollup-plugin-terser';
 import ts from 'rollup-plugin-ts';
 
 const build = () => [
-  entry('./src/index.ts', [
-    out('./dist/index.esm.js', { format: 'esm', minify: true }),
-    out('./dist/index.cjs.js', { format: 'cjs', minify: true }),
-    out('./dist/index.umd.js', { format: 'umd', minify: true }),
-  ]),
+  entry('./src/index.ts', [out('./dist/index.js', { format: 'cjs', minify: true })]),
+  entry('./src/development.ts', [out('./dist/development.js', { format: 'cjs', minify: true })]),
 ];
 
 const entry = (input, output) => ({
