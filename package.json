@@ -1,0 +1,38 @@
+{
+  "name": "babel-plugin-million",
+  "version": "0.0.0",
+  "description": "Transforms JSX to Million virtual nodes",
+  "main": "dist/million.umd.js",
+  "module": "dist/million.esm.js",
+  "types": "dist/million.esm.d.ts",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aidenybai/babel-plugin-million.git"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/million.esm.js",
+      "require": "./dist/million.cjs.js"
+    }
+  },
+  "sideEffects": false,
+  "keywords": [
+    "million",
+    "virtualdom",
+    "compiler",
+    "babel",
+    "jsx",
+    "tsx",
+    "transformer"
+  ],
+  "author": "Aiden Bai <hello@aidenybai.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aidenybai/babel-plugin-million/issues"
+  },
+  "homepage": "https://github.com/aidenybai/babel-plugin-million",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
